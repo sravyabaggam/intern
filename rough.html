@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"> </script>
+    <script type="text/javascript">
+           function myFunction() {
+    document.getElementById("mytable").deleteRow(0);
+}
+           
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.editbtn').click(function(){
+            $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit');
+ 
+                    'td[contenteditable=false]';
+            }
+            else if('td[contenteditable=false]'){
+                    'td[contenteditable=true]';
+            }
+            //else not editable row
+           }); //moved this test
+        });
+
+    </script>
+
+</head>
+<body>
+  <table id="mytable" border="1">
+    
+
+<thead>
+      
+    <tr class="del">
+      <td>1</td>
+        <td contenteditable="true">sravya</td> 
+        <td contenteditable="true"> 5456547</td>
+        <td contenteditable="true">23,colony</td>
+         <td> <button class="editbtn">Edit</button> </td>
+          <td> <button onclick="myFunction()">delete</button> </td >
+
+    </tr>
+    <tr class="del">
+      <td>2</td>
+        <td contenteditable="true">siri</td>
+        <td contenteditable="true">2567894</td>
+        <td contenteditable="true">22, colony</td>
+         <td> <button class="editbtn">Edit</button> </td>
+         <td> <button onclick="myFunction()">delete</button> </td >
+
+    </tr>
+<tr class="del">
+  <td>3</td>
+        <td contenteditable="true">nikila</td>
+        <td contenteditable="true">1222678</td>
+        <td contenteditable="true">27, colony</td>
+         <td> <button class="editbtn">Edit</button> </td>
+         <td> <button onclick="myFunction()">delete</button> </td >
+
+    </tr>
+<tr class="del">
+  <td>4</td>
+
+        <td contenteditable="true">riyan</td>
+        <td contenteditable="true">4563782</td>
+        <td contenteditable="true">25, colony</td>
+         <td> <button class="editbtn">Edit</button> </td>
+         <td> <button onclick="myFunction()">delete</button> </td >
+
+    </tr>
+<tr class="del">
+  <td>5</td>
+        <td contenteditable="true">riya</td>
+        <td contenteditable="true">6565454</td>
+        <td contenteditable="true">28, colony</td>
+         <td> <button class="editbtn">Edit</button> </td>
+         <td> <button onclick="myFunction()">delete</button> </td >
+
+    </tr>
+
+  </table>
+    
+
+</body>
+
+</html>
