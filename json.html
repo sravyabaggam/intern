@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+    .ac{
+        margin:4px;
+    }
+    </style>
+<body>
+
+
+<div class="container-fluid">
+
+<button class="btn btn addData">Add Data</button>
+<div id="addform"></div>
+<div id="id01"></div>
+
+</div>
+<script>
+/*
+var xmlhttp = new XMLHttpRequest();
+var url = "http://www.w3schools.com/website/Customers_MYSQL.php";
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();*/
+$(document).ready(function(){
+var d = [ { "Name" : "Kumar", "City" : "Delhi", "Country" : "India" },{ "Name" : "phani", "City" : "vsp", "Country" : "india" }, { "Name" : "vani", "City" : "vsp", "Country" : "india" }, { "Name" : "ria", "City" : "vsp", "Country" : "india" }, { "Name" : "rian", "City" : "vsp", "Country" : "india" }];
+myFunction(d);
+function myFunction(response) {
+    var arr = response;
+    var i;
+    var out = "<table class=\"table table-striped mainT\"><tr><th>Name</th><th>City</th><th>Country</th><th>Action</th></tr>";
+
+    for(i = 0; i < arr.length; i++) {
+        if(arr[i].Name){
+        out += "<tr><td>" +
+        arr[i].Name +
+        "</td><td>" +
+        arr[i].City +
+        "</td><td>" +
+        arr[i].Country +
+        "</td><td><button type=\"button\" id='"+i+"' class=\"btn btn edit\"> edit</button><button type=\"button\" id='"+i+"' class=\"btn btn ad\">delete</button></td></tr>";
+        }
+    }
+    out += "</table>";
+    document.getElementById("id01").innerHTML = out;
+}
+//edit
+$(document).on("click", ".edit", function(){
+    $("#addform").show();
+    $(".mainT").hide();
+    $("#addform").html('<table class="table table-striped"><tr><td><input type="text" id="customFieldName" name="customFieldName" value="'+d[this.id].Name+'" placeholder="Name" /> </td><td><input type="text" class="code" id="customFieldValue" name="customFieldValue" value="'+d[this.id].City+'" placeholder="City" /></td><td><input type="text" class="code" id="customFieldCountry" name="customFieldCountry" value="'+d[this.id].Country+'" placeholder="Country" /></td><td><button class=" btn savedyn" id="'+this.id+'" value="save">Save</button></td></tr></table>');
+    //alert(this.id); // or alert($(this).attr('id'));
+});
+//save edit
+$(document).on("click", ".savedyn", function(){
+        var name = $("#customFieldName").val();
+        var city = $("#customFieldValue").val();
+        var country = $("#customFieldCountry").val();    
+        d[this.id].Name=name;
+        d[this.id].City=city;
+        d[this.id].Country    =country;
+        $("#addform").hide();
+        $(".mainT").show();
+        myFunction(d);
+});
+//delete
+$(document).on("click", ".ad", function(){
+    d[this.id] = ''; // or alert($(this).attr('id'));
+    myFunction(d);
+});
+//save addition
+$(document).on("click", "#addD", function(){
+        var name = $("#customFieldName").val();
+        var city = $("#customFieldValue").val();
+        var country = $("#customFieldCountry").val();    
+        d.push({"Name":name,"City":city,"Country":country});
+        $("#addform").hide();
+        $(".mainT").show();
+        myFunction(d);
+});
+//add form
+$(document).on("click", ".addData", function(){
+        $("#addform").show();
+        $(".mainT").hide();
+        $("#addform").html('<table class="table table-striped"><tr><td><input type="text" id="customFieldName" name="customFieldName" value="" placeholder="Name" /> </td><td><input type="text" class="code" id="customFieldValue" name="customFieldValue" value="" placeholder="City" /></td><td><input type="text" class="code" id="customFieldCountry" name="customFieldCountry" value="" placeholder="Country" /></td><td><button class=" btn" id="addD" value="save">Save</button></td></tr></table>');
+    });
+});
+</script>
+
+</body>
+</html>
