@@ -18,6 +18,7 @@
     .Row
     {
         display: table-row;
+        background-color: green;
     }
     .Cell
     {
