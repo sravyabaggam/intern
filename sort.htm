@@ -2,15 +2,10 @@
 <html>
 <body>
 <style>
-
 h1   {color: black; text-align:center;}
-
 </style>
-
 <h1>sorting</h1>
-
 <script type="text/javascript">
-
 function sortvalues(){ 
 var inputvalues=document.getElementById("num").value;
 var inputvalues1=document.getElementById("num1").value;
@@ -24,10 +19,7 @@ var inputvalues8=document.getElementById("num8").value;
 var inputvalues9=document.getElementById("num9").value;
 var inputvalues10=document.getElementById("num10").value;
 var points = [inputvalues,inputvalues1,inputvalues2,inputvalues3,inputvalues4,inputvalues5,inputvalues6,inputvalues7,inputvalues8,inputvalues9,inputvalues10];
-
-
  points.sort(function(a, b){return a - b}); 
-
 document.getElementById("num").value = points[0];
 document.getElementById("num1").value = points[1];
 document.getElementById("num2").value = points[2];
@@ -41,7 +33,6 @@ document.getElementById("num9").value = points[9];
 document.getElementById("num10").value = points[10];
 }
 </script>
-
 <form>
   <input type="text" id="num" value="">
   <br>
