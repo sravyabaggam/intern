@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>parameter default.</p>
+
+<p id="xyz"></p>
+
+<script>
+        
+        function myFunction(x, y) {
+        if (y === undefined) {
+        y = 0;
+    }
+    return x * y;
+}
+document.getElementById("xyz").innerHTML = myFunction(6);
+</script>
+
+</body>
+</html>
+
+
