@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+  
+  <p> javascript hoisting: </p>
+        
+  </h1>
+          <script>
+var a = 1;
+
+function b() {
+    a = 10;
+    return;
+
+    function a() {}
+}
+b();
+alert(a);
+</script>
+</body>
