@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<form>
+  
+  First name:<br>
+  <input type="text" name="firstname" id ="firstname" maxlength= "10" >
+<br>
+ 
+  Last name:<br>
+  <input type="text" name="lastname" id ="lastname"maxlength= "10">  
+  <br>
+  
+  E-mail:<br>
+  <input type="email" name="email" id= "email" >
+  <br>
+  
+  Password:<br>
+  <input type="password" name="password" id="password" maxlength= "10">
+  <br>
+  
+  Confirm Password:<br>
+  <input type="password" name="Confirm Password" id="Confirm Password" maxlength="10">
+  <br>
+  
+  phone number:<br>
+ <input type="text" name="phonenumber" id="phonenumber" maxlength="10">
+  <br> <br>
+  
+  <button type="submit"id="btn"name="submit">submit</button> 
+
+  <script type="text/javascript">
+ $("#btn").on("click",function(){
+if($("#firstname").val() == ''){
+  alert("please enter first name");
+}
+{
+if($("#lastname").val() == ''){
+  alert("please enter last name");
+}
+}
+{
+if($("#email").val() == ''){
+  alert("please enter email");
+}
+}
+{
+if($("#password").val() == ''){
+  alert("please enter password");
+}
+}
+
+{
+if($("#Confirm Password").val() == ''){
+  alert("please enter Confirm Password");
+}
+}
+{
+if($("#phonenumber").val() == ''){
+  alert("please enter phonenumber");
+}
+}
+});
+
+  </script>
+ 
+</body>
+
+
