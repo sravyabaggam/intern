@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/jquery.validate.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
+<script> 
+  $(function($) {
+  var validator = $('#form1').validate({
+    rules: {
+      firstname: {
+        required: true
+      },
+      lastname: {
+        required: true
+      },
+      age: {
+        required: true
+    },
+      gender: {
+         required: true
+       },
+       address: {
+          required: true
+        },
+          
+         
+      messages: {
+
+    firstname: "Please enter your firstname",
+   lastname: "Please enter your lastname",
+    age: "Please enter your age",
+    gender: "Please enter gender",
+    address: "Please enter your address",
+   
+          
+          },
+               submit: function(form1) {
+      form1.submit();
+    }
+  }
+});
+});  
+
+
+</script>
+</head>
+<body>
+ <h1 style="text-align:center;">STUDENTFORM</h1>
+<form id="form1">
+  
+First Name:<br>
+    <input type="text" name="firstname" id="firstname">
+    <br><br>
+ Last Name:<br>
+ <input type="text" name="lastname" id="lastname">
+ <br><br>
+
+ Age:<br>
+    <input type="text" name="age" id="age" size="5" maxlength="2">
+    <br><br>
+
+ Gender:<br>
+        <input type="radio" name="gender" id="gender" value="male" > Male
+        <br>
+         <input type="radio" name="gender" id="gender" value="female"> Female
+         <br><br>
+        
+ Address:<br>
+
+            <textarea name="adress" id="address" rows="10" cols="30"></textarea>
+            <br><br>
+   
+  Education:<br>
+
+              <input type="checkbox" name="High school" id="education" value="education">High school
+              <br>
+              <input type="checkbox" name="Diploma" id="education" value="education">Diploma
+              <br>
+              <input type="checkbox" name="Degree/Graduation" id="education" value="education">Degree/Graduation
+              <br>
+              <input type="checkbox" name="Post Graduation" id="education" value="education">Post Graduation
+              <br>
+                 <input type="checkbox" name="PHD" value="education">PHD       
+              <br><br>
+      
+                  <button type="submit">Register</button>   <button type="clear" value="Reset">clear</button>
+
+     
+              
+ </form>
+ </body>
+ </html>
+
+ 

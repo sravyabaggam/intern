@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<style type="text/css">
+label {display:inline-block; width:60px;}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+$("form").validate({
+
+messages: {
+     name: "Please specify your name.",
+     email: {
+       required: "We need your email address to contact you.",
+       email: "Your email address must be in the format "
+     },
+     
+     
+            comment:"Please enter your comment."
+
+   },
+
+showErrors: function(errorMap, errorList) {
+        if(errorList.length) {
+            $("span").html(errorList[0].message);
+        }
+    }
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<span></span>
+
+<form >
+
+<div><label>Name </label><input type="text" class="required" name="name" ></div> <br>
+
+<div><label>Email </label><input type="text" class="required email" name="email" ></div> <br>
+
+<div><label>URL </label><input type="text" class="required url" name="url" ></div> <br>
+
+<div><textarea class="required" name="comment" rows="7" cols="35"></textarea></div> <br>
+ 
+<div><input type="submit" name="submit" value="Submit"></div> 
+
+</form>
+
+</body>
+
+</html>

@@ -8,63 +8,90 @@
   
   First name:<br>
   <input type="text" name="firstname" id ="firstname" maxlength= "10" >
+  <div id="error_message"></div>
 <br>
  
   Last name:<br>
   <input type="text" name="lastname" id ="lastname"maxlength= "10">  
+  <div id="error_message"></div>
   <br>
   
   E-mail:<br>
   <input type="email" name="email" id= "email" >
+   <div id="error_message"></div>
   <br>
   
   Password:<br>
   <input type="password" name="password" id="password" maxlength= "10">
+   <div id="error_message"></div>
   <br>
   
   Confirm Password:<br>
   <input type="password" name="Confirm Password" id="Confirm Password" maxlength="10">
+   <div id="error_message"></div>
   <br>
   
   phone number:<br>
  <input type="text" name="phonenumber" id="phonenumber" maxlength="10">
+  <div id="error_message"></div>
   <br> <br>
   
+
   <button type="submit"id="btn"name="submit">submit</button> 
 
   <script type="text/javascript">
+  var err_msag='';
  $("#btn").on("click",function(){
 if($("#firstname").val() == ''){
-  alert("please enter first name");
+  err_msag ="please enter first name<br>";
+  $('#error_message').html(err_msag);
+  return false;
 }
-{
+else{
+  return true;
+}
 if($("#lastname").val() == ''){
-  alert("please enter last name");
+   err_msag ="Please enter last name<br>";
+   $('#error_message').html(err_msag);
+   return false;
 }
-}
-{
-if($("#email").val() == ''){
-  alert("please enter email");
-}
-}
-{
-if($("#password").val() == ''){
-  alert("please enter password");
-}
+else{
+  return true;
 }
 
-{
+if($("#email").val() == ''){
+   err_msag+="please enter emaile<br>";
+
+
+}
+
+if($("#password").val() == ''){
+   err_msag+="please enter passworde<br>";
+
+}
+
 if($("#Confirm Password").val() == ''){
-  alert("please enter Confirm Password");
+  err_msag+="please enter Confirm passworde<br>";
+ 
+
 }
-}
-{
+
 if($("#phonenumber").val() == ''){
-  alert("please enter phonenumber");
-}
+  err_msag+="please enter phonenumber<br>";
+
 }
 });
 
+/*if(err_msag)
+{
+ $('#error_message').html(err_msag);
+ return false;
+}
+else
+ return true;
+});*/
+
+ //return false;
   </script>
  
 </body>
