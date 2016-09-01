@@ -8,7 +8,8 @@ var ucountry = document.registration.country;
 var uzip = document.registration.zip;  
 var uemail = document.registration.email;  
 var umsex = document.registration.msex;  
-var ufsex = document.registration.fsex; if(userid_validation(uid,5,12))  
+var ufsex = document.registration.fsex; 
+if(userid_validation(uid,5,12))  
 {  
 if(passid_validation(passid,7,12))  
 {  

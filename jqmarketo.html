@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js">
+</script>
+
+<script>
+$(function() {
+	 $("form").validate({
+   
+    rules: {
+      name: {
+      	  required: true,
+      	},
+      	    url: {
+         required: true,
+          
+     },
+     fname: 
+     	 {
+         required: true,
+
+     },
+     lname: 
+       {
+         required: true,
+
+     },
+      cadress:
+      {
+         required: true,
+     },
+    
+     city:
+     {
+      required: true,
+     },
+     
+     state:
+     {
+     	required: true,
+     },
+     zip:
+     {
+      required: true,
+     },
+     
+    phone:
+    {
+      required: true,
+      number:true,
+      maxlength:10,
+      minlenth: false,
+    },
+  
+    
+  submit: function(form) {
+      form.submit();
+
+    }
+
+    }
+});
+	});
+
+</script>
+</head>
+<body>
+<div class="container">
+ <h2>Registration</h2>
+  <form action="" name="form">
+CompanyName:
+   
+    <input type="text" name="name"  placeholder="name"/>     <label for="name" class="error" ></label> 
+    <br>
+    <br>
+ CompanyURL:  
+     <input type="url" name="url" placeholder="url"/>   <label for="url"  class="error">  </label>
+     <br>
+     <br>
+  First Name:
+    
+    
+     <input type="text" name="fname"  placeholder="name"/>  <label for="fname" class="error"> </label>
+     <br>
+     <br>
+     Last Name:
+
+     <input type="text" name="lname"  placeholder="name"/>  <label for="lname" class="error"> </label>
+     <br>
+     <br>
+
+Company Adress:
+     <label for="cadress" class="error" > </label>
+     <br>
+     <br>
+     <textarea name="cadress" placeholder="cadress" rows="10" cols="30"></textarea>
+            <br>
+            <br> 
+         <br> 
+
+City:
+
+    <input type="text" name="city"  placeholder="city"/>   <label for="city" class="error"> </label>  
+    <br>
+    <br>
+  State:  
+                 <select name="state" class="error">
+                 <br>
+  
+                 <option value="">select</option>
+           <option value="vizag">vizag</option>
+           <option value="Bnaglore">Banglore</option>
+           <option value="Mumbai">Mumbai</option>
+           <option value="Delhi">Delhi</option>
+           </select>
+           <br>
+          <br>
+          
+    ZIP:
+    
+    <input type="number" name="zip" value="" placeholder="zip"/> <label for="zip" class="error"> </label>     
+    <br>
+    <br>
+
+  Phone: 
+<input type="number" name="phone" value="" placeholder="phone"> <label for="phone" class="error"> </label>     
+    <br>
+    <br>
+
+   <button type="submit">Register</button>  <button type="reset" value="Reset">clear</button>
+   </form>
+</div>
+</body>
+</html>
