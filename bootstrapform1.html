@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Boostrap Validator</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"> </script>
+</head>
+<script>
+$(document).ready(function() {
+    $('#contactform1').bootstrapValidator({
+
+    container: '#messages',
+ feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+
+        fields: {
+            Name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required and cannot be empty'
+                    }
+                }
+            },
+
+            age: {
+                validators: {
+                    notEmpty: {
+                        message: 'this field is required and cannot be empty'
+                    
+                    }
+                }
+            },
+
+            phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'The phone number is required and cannot be empty'
+                    },
+                    maxLength: {
+                        max: 10,
+                        message: 'The phone number must be 10 characters only'
+                    }
+                }
+            },
+
+            education: {
+                validators: {
+                    notEmpty: {
+                        message: 'please enter this field'
+                    },
+                    
+                    }
+                }
+            }
+           $(document).ready(function() {
+    $('#contactform2').bootstrapValidator({
+
+    container: '#messages',
+ feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+
+        fields: {
+            line1: {
+                validators: {
+                    notEmpty: {
+                        message: 'this field is required and cannot be empty'
+                    }
+                }
+            },
+
+            line2: {
+                validators: {
+                    notEmpty: {
+                        message: 'this field is required and cannot be empty'
+                    
+                    }
+                }
+            },
+
+            phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'The phone number is required and cannot be empty'
+                    },
+                    maxLength: {
+                        max: 10,
+                        message: 'The phone number must be 10 characters only'
+                    }
+                }
+            },
+
+            city: {
+                validators: {
+                    notEmpty: {
+                        message: 'please enter this field'
+                    },
+                    
+                    }
+                }
+            }
+          $(document).ready(function() {
+    $('#contactform3').bootstrapValidator({
+
+    container: '#messages',
+ feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+
+        fields: {
+            office email: {
+                validators: {
+                    notEmpty: {
+                        message: 'this field is required and cannot be empty'
+                    }
+                }
+            },
+
+            personal email: {
+                validators: {
+                    notEmpty: {
+                        message: 'this field is required and cannot be empty'
+                    
+                    }
+                }
+            },
+
+            phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'The phone number is required and cannot be empty'
+                    },
+                    maxLength: {
+                        max: 10,
+                        message: 'The phone number must be 10 characters only'
+                    }
+                }
+            },
+
+            land line: {
+                validators: {
+                    notEmpty: {
+                        message: 'The phone number is required and cannot be empty'
+                    },
+                    maxLength: {
+                        max: 7,
+                        message: 'The phone number must be 7 characters only'
+                    },
+                    
+                    }
+                }
+            }
+                
+        }
+    });
+});
+
+</script>
+
+<form id="contactform1">
+<div class="row">
+    <div class="col-sm-4" >
+      <div class="form-group">
+                                <h3>Personal</h3> <br>
+                              name:
+                                 <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                                </div>
+                                <div class="form-group">
+                              age: 
+                                <input type="number" class="form-control" name="age" placeholder="age">
+                                </div>
+                                <div class="form-group">
+                              phone:
+                                <input type="number" class="form-control" name="phone" placeholder="Enter phone">
+                                </div>
+                                <div class="form-group">
+                              education:
+                                <select class="form-control" name="education">
+                                    <option selected value="">Choose One:</option>               
+                                    <option value="inquiry">Btec/Bsc/MBA</option>               
+                                    <option value="suggestions">Inter</option>              
+                                    <option value="other">Tenth</option>
+                                </select>
+                        
+                                        <div class="form-group">
+                                         <div id="messages"></div>
+                                           </div>
+                                            </div>
+                                             <div>
+                                         <input type="submit" name="submit" value="Submit">
+                                            </div>
+                                        </div>
+
+   
+
+   <form id="contactform2" >
+   <div class="col-sm-4" >
+     <div class="form-group">
+                                <h3>Address</h3> <br>
+                                line1:
+                                  <input type="text" class="form-control" name="line1" placeholder="Line1">
+                                 </div>
+
+                               <div class="form-group">
+                                line2:
+                                  <input type="text" class="form-control" name="line2" placeholder="Line2">
+                                  </div>
+                                  <div class="form-group">
+                                phone:
+                                  <input type="number" class="form-control" name="phone" placeholder="Enter phone">
+                                  </div>
+                               <div class="form-group">
+                                city:
+                                    <select class="form-control" name="city">
+                                    <option selected value="">Choose One:</option>               
+                                    <option value="vizag">VIZAG</option>               
+                                    <option value="bangalore">BANGALORE</option>              
+                                    <option value="hyderabad">HYDERABAD</option>
+                                </select>
+                                 
+                                       </div>                        
+                                           <div>
+                                           <input type="submit" name="submit" value="Submit">
+                                            </div> 
+                                              </div>
+
+<form id="contactform3" >
+<div class="col-sm-4" >
+     <div class="form-group">
+                                <h3>Contact</h3> <br>
+                                office email:
+                                <input type="email" class="form-control" name="office email" placeholder="Office Email">
+                            </div>
+                            <div class="form-group">
+                                personal email:
+                                <input type="email" class="form-control" name="personal email" placeholder="Personal Email">
+                            </div>
+                            <div class="form-group">
+                                phone:
+                                <input type="number" class="form-control" name="phone" placeholder="Enter phone">
+                            </div>
+                            <div class="form-group">
+                                land line:
+                                <input type="number" class="form-control" name="land line" placeholder="Land Line">
+                                
+
+                            </div>                        
+                                <div>    
+                                 <input type="submit" name="submit" value="Submit">
+                                   </div>
+                                   </div>
+                                  </div>
+                                  </body>
+                                  </html>
