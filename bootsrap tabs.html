@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body{color:red;}
+form{color:blue;}
+span {color:red;}
+
+</style>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+function myValidate() {
+ 
+    var x = document.forms["formA"]["name"].value;
+    var y = document.forms["formA"]["age"].value;
+    var z = document.forms["formA"]["gender"].value;
+    
+    var b = document.getElementById("nameErr");    
+    var c = document.getElementById("ageErr");
+    var d = document.getElementById("genderErr");
+    
+ 
+    if (!x || x.length==0) {
+        b.innerHTML = "Name Must Be Filled Out";
+        return false;
+    } else {
+        b.innerHTML = "";
+    }
+
+    if (!y || y.length==0) {
+        c.innerHTML = "age Must Be Filled Out";
+        return false;
+    } else {
+        c.innerHTML = "";
+    }
+
+    if (!z || z.length==0) {
+        d.innerHTML = "gender Must Be Filled Out";
+        return false;
+    } else {
+        d.innerHTML = "";
+    }
+
+} 
+
+</script> 
+<script>
+function myValidatee() {
+    var x = document.forms["formB"]["pnumber"].value;
+    var y = document.forms["formB"]["lline"].value;
+    var z = document.forms["formB"]["email"].value;
+    var a = document.forms["formB"]["cemail"].value;
+    var b = document.getElementById("pnErr");    
+    var c = document.getElementById("llErr");
+    var d = document.getElementById("peErr");
+    var e = document.getElementById("ceErr");
+
+    if (!x || x.length==0) {
+        b.innerHTML = "phonenumber Must Be Filled Out";
+        return false;
+    } else {
+        b.innerHTML = "";
+    }
+
+    if (!y || y.length==0) {
+        c.innerHTML = "landline Must Be Filled Out";
+        return false;
+    } else {
+        c.innerHTML = "";
+    }
+
+    if (!z || z.length==0) {
+        d.innerHTML = "PersonalEmail Must Be Filled Out";
+        return false;
+    } else {
+        d.innerHTML = "";
+    }
+
+    if (!a || a.length==0) {
+        e.innerHTML = " CompanyEmail Must Be Filled Out";
+        return false;
+    } else {
+        e.innerHTML = "";
+    }
+    return true;
+}
+</script>
+<script>
+function myValidation() {
+   
+    var y = document.forms["formC"]["line"].value;
+    var z = document.forms["formC"]["linee"].value;
+    var c = document.getElementById("lineErr");
+    var d = document.getElementById("lineeErr");
+    if (!y || y.length==0) {
+        c.innerHTML = "Line1 Must Be Filled Out";
+        return false;
+    } else {
+        c.innerHTML = "";
+    }
+
+    if (!z || z.length==0) {
+        d.innerHTML = "Line2 Must Be Filled Out";
+        return false;
+    } else {
+        d.innerHTML = "";
+    }
+  }
+
+    
+</script>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>personal</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1" >Personal Information</a></li>
+    <li><a data-toggle="tab" href="#menu2">Contact Information</a></li>
+    <li><a data-toggle="tab" href="#menu3">Address Information</a></li>
+   
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active ">
+    
+
+     
+
+
+    </div>
+    <div id="menu1" class="tab-pane fade">
+     
+      <form  action="" onsubmit="return myValidate()" method="post" name="formA">
+      <H3>PERSONAL FORM</H3>
+Name:
+<br>
+   <span id="nameErr"></span>
+   <br>
+    <input type="text" name="name" id = "message"  placeholder="name"/>     
+    <br><br>
+    
+Age: 
+<br> 
+ <span id="ageErr"></span>
+ <br>
+     <input type="number" name="age" placeholder="age"/> 
+     <br><br>
+     
+ Gender:<br>
+  <span id="genderErr"></span>
+     <br>
+        <input type="radio" name="gender" value="male" > Male
+        
+         <input type="radio" name="gender" value="female"> Female
+         <br><br>
+
+
+              <br>
+               <br>                                                                       
+             <button type="submit" value="submit">check</button> 
+         <br> 
+         
+ </form>
+
+    </div>
+    <div id="menu2" class="tab-pane fade">
+     <form  action=""  onsubmit="return myValidatee()" method="post" name="formB" >
+  <H3>CONTACT INFORMATION</H3>
+  
+    
+phonenumber:
+<br>
+  <span id="pnErr"></span>
+  <br>
+    <input type="number" name="pnumber"  placeholder="number"/>     
+    <br>
+    <br>
+
+
+landline: 
+ 
+ <br> 
+ <span id="llErr"></span>
+  <br>
+ <input type="number" name="lline" placeholder="number"/> 
+     <br><br>  
+ PersonalEmail:
+     
+    
+     <br>
+     <span id="peErr"></span>
+  <br>
+    <input type="email" name="email"  placeholder="email"/>    
+    <br>
+    <br> 
+    CompanyEmail:
+     
+     
+     <br>
+     <span id="ceErr"></span>
+  <br>
+    <input type="email" name="cemail"  placeholder="email"/>    
+    <br>
+    <br>    
+     
+             <button type="submit" value="submit">check</button> 
+        
+         
+ </form>
+
+    </div>
+
+    <div id="menu3" class="tab-pane fade">
+ <form  action="" onsubmit="return myValidation()" method="post" name="formC">
+   <H3>ADDRESS INFORMATION</H3>
+  
+
+
+Line1:<br>
+   <span id="lineErr"></span>
+  <br> 
+    
+     <textarea name="line" placeholder="address" rows="1" cols="20"></textarea>
+            <br>
+            <br> 
+
+            Line2:
+<br>
+   <span id="lineeErr"></span>
+  <br> 
+    
+     <textarea name="linee" placeholder="address" rows="1" cols="20"></textarea>
+            <br>
+            <br> 
+
+             <button type="submit" value="submit">register</button> 
+         <br> 
+ </form>
+ </div>
+ 
+ </div>
+ 
+  </div>
+</div>
+
+</body>
+</html>
