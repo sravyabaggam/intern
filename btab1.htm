@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+ <style>
+.Clearboth
+{
+    clear: both;
+}
+ 
+.divright
+{   
+float:right;
+}
+ 
+.divleft
+{
+float:left;
+}
+span {color:red;}
+} 
+</style>
+<head>  
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+ 
+    <script>
+  $(function () {
+    $( "#tabs" ).tabs();
+ 
+  });
+</script>
+   <script >
+    $(function () { 
+  
+    var selectedTab = $(document).find('div[class^="ui-tabs"]').first();
+ 
+    $(".Footer").on('click', ':button', function () {
+        var selected = selectedTab.tabs("option", "active");
+        if (this.id == "btnMoveLeftTab") {
+            if (selected >= 1) {
+                selectedTab.tabs("option", "active", selected - 1);
+            }
+        } else {
+            selectedTab.tabs("option", "active", selected + 1);
+        }
+    });
+ 
+  
+    selectedTab.tabs({
+ 
+        activate: function (event, ui) { 
+            var active = selectedTab.tabs("option", "active");
+            var selected = selectedTab.tabs("option", "active");
+ 
+            if (active == 0) {
+                $("#btnMoveLeftTab").hide();
+            }else if (selectedTab.find("li:not(li[style='display:none'])").size()-1 == selected){
+                $("#btnMoveRightTab").hide();
+            }else{
+                $("#btnMoveLeftTab").show();
+                $("#btnMoveRightTab").show();
+            }
+ 
+        }
+    });
+ 
+   
+    $("#btnMoveLeftTab").hide();
+  });
+</script>
+
+</head>
+<body>
+ <div id="tabs">
+  <ul>
+  	
+    <li><a href="#tabs-1">Personal</a></li>
+    <li><a href="#tabs-2">Contact</a></li>
+    <li><a href="#tabs-3">Address</a></li>
+  </ul>
+  
+
+
+  <div id="tabs-1">
+  
+   <form  action="btab.php"  method="post" name="formA">
+     
+             <H3>PERSONAL FORM</H3>
+Name:
+  
+   <br>
+   <input type="text" required="required"name="name" id = "name"  placeholder="name"/>     
+   <br><br>
+              
+Age: 
+  
+   <br>
+   <input type="number" required="required"name="age" placeholder="age"/> 
+   <br><br>
+     
+Gender:
+     
+      <br>
+      <input type="radio" required="required"name="gender" value="male" > Male
+      <input type="radio" required="required"name="gender" value="female"> Female
+      <br><br>
+  <br>
+</div>
+
+  <div id="tabs-2">
+  
+          <H3>CONTACT INFORMATION</H3>
+  
+    
+phonenumber:
+        
+        <br>
+        <input type="number"required="required" name="pnumber"  placeholder="number"/>     
+        <br><br>
+
+
+landline: 
+      
+       <br>
+       <input type="number" required="required"name="lline" placeholder="number"/> 
+       <br><br>  
+PersonalEmail:
+        
+         <br>
+         <input type="email" required="required"name="email"  placeholder="email"/>    
+         <br><br> 
+CompanyEmail:
+      
+        <br>
+        <input type="email" required="required"name="cemail"  placeholder="email"/>    
+        <br><br>    
+        <br>
+  </div>
+  <div id="tabs-3">
+
+                  <H3>ADDRESS INFORMATION</H3>
+  
+Line1:
+      
+    
+      <br> 
+      <textarea name="line" required="required"placeholder="address" rows="1" cols="20"></textarea>
+      <br><br> 
+
+Line2:
+    
+     
+      <br> 
+      <textarea name="linee" required="required"placeholder="address" rows="1" cols="20"></textarea>
+      <br><br> 
+      <button type="submit" value="submit">register</button> 
+  <br>
+</form>
+</div>
+ 
+ <div class="Footer">
+    <div class="divleft">
+        <button id="btnMoveLeftTab"  type="button" value="Previous Tab" text="Previous Tab">Previous Tab
+        </button>
+    </div>
+    <div class="divright">
+        <button id="btnMoveRightTab" type="button" value="Next Tab"  text="Next Tab">Next Tab
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
